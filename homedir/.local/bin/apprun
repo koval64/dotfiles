@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# run AppImage application in the same directory as this script
+#
+# usage :
+# $ apprun application_name
+#
+# desktop entry add to directory:
+#
+# ~/.local/share/applications/appname.desktop
+#
+
+DIR="$HOME/.local/bin"
+FILENAME="$1"
+FILEPATH="$DIR/$FILENAME"
+
+if [ ! -f $FILEPATH ]; then
+
+    echo "File not found! :  $FILEPATH"
+    notify-send "File not found!" "$FILEPATH" -t 2500
+
+else
+
+    pushd $DIR
+    notify-send "Running" "$FILEPATH" -t 2500
+    ./"$FILENAME" "$@"
+    popd
+
+fi
+
+

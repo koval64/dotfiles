@@ -1,0 +1,4 @@
+#!/bin/bash
+
+apprun Godot_v3.4.4-stable_x11.64
+
