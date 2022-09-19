@@ -62,10 +62,10 @@ element {
 }
 
 /* fix text-color */
-/* element-text { */
-/*     background-color: inherit; */
-/*     text-color:       inherit; */
-/* } */
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
 
 element selected {
   background-color: @blue;
