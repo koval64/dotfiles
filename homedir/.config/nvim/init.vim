@@ -34,53 +34,12 @@ Plug 'vimwiki/vimwiki'
 Plug 'tpope/vim-commentary'		" easy comments
 Plug 'itchyny/lightline.vim'		" statusbar
 Plug 'NLKNguyen/papercolor-theme'	" theme
-
-Plug 'lambdalisue/nerdfont.vim'		" NerdFont for Fern icons
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'lambdalisue/fern.vim'		" fern
+Plug 'lambdalisue/nerdfont.vim'		" NerdFont for Fern icons
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'	" for Fern icons
 
 call plug#end()
-
-" Get syntax files from config folder
-" set runtimepath+=~/.config/nvim/syntax
-
-" General
-colorscheme PaperColor
-set background=dark
-set number relativenumber
-set nowrap
-set clipboard=unnamed
-
-set ignorecase		" always case insensitive
-
-set autoindent		" auto-indent new lines
-set expandtab		" use spaces instead of tabs
-set shiftwidth=4	" number of auto-indent spaces
-set smartindent		" enable smart-indent
-set smarttab		" enable smart-tabs
-set softtabstop=4	" number of spaces per tab
-
-" Advanced
-
-set autochdir
-set autowriteall
-
-set backspace=indent,eol,start	" backspace behavior
-
-" Disable C-z from job-controlling neovim
-nnoremap <c-z> <nop>
-
-" Remap C-c to <esc>
-nmap <c-c> <esc>
-imap <c-c> <esc>
-vmap <c-c> <esc>
-omap <c-c> <esc>
-
-" Syntax highlighting
-syntax on
-
-" default file encoding
-set encoding=utf-8
 
 " Plugins config
 source ~/.config/nvim/vim-which-key.vimrc 
@@ -89,10 +48,10 @@ source ~/.config/nvim/coc-newconfig.vimrc
 source ~/.config/nvim/vimwiki.vimrc
 source ~/.config/nvim/commentary.vimrc
 source ~/.config/nvim/fern.vimrc
+source ~/.config/nvim/fzf.vimrc
 
-" " coc-python
-" set statusline^=%{coc#status()}
+" Vim settings
+source ~/.config/nvim/general.vimrc
 
-" enable 'gf' for current file and all traversing downwords
-set path+=.,**
+
 

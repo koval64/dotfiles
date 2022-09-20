@@ -9,6 +9,8 @@ inoremap <expr> <C-j> coc#pum#visible() ? "\<C-N>" : "\<C-j>"
 inoremap <expr> <C-k> coc#pum#visible() ? "\<C-P>" : "\<C-k>"
 
 
+" " coc-python
+" set statusline^=%{coc#status()}
 
 
 

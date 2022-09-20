@@ -5,6 +5,9 @@
 
 NOTIFICATIONS_ENABLED=false
 
+GREEN="\e[32m"
+ENDCOLOR="\e[0m"
+
 show_notification()
 {
 	echo $1
@@ -30,43 +33,35 @@ kill_application()
 
 show_application_options()
 {
-	echo
-	echo "app is running. what to do ?" ;
-	echo "----------------------------"
-	echo "1) list pid/s"
-	echo "2) list pid/s with name"
-	echo "3) kill it"
-	echo "q) quit   ( also Ctrl-C )"
-	echo "----------------------------"
-	echo
+        echo -en "${GREEN}"
+        echo -n "> $1 > 1)pids 2)pids with name x)kill q)quit"
+        echo -e "${ENDCOLOR}"
 }
 
-# kill_application example_application_name
-
 if [ $# -ne 1 ]; then
-  echo "application name please..."
+    echo "application name please..."
 else
-  #
-  # if application is running
-  #
-  if pgrep -i $1 >/dev/null	# ??? or -- if [ $(ps aux | grep -i $1 | wc -l) -gt 0 ]
-  then
     #
-    # loop forever - break by 'exit' command or 'ctrl-c' shortcut
+    # if application is running
     #
-    while :
-    do
-	show_application_options
-	read -s -n 1 ans;
-	case $ans in
-		1)	pgrep -i $1 -d " ";;
-		2)	pgrep -ail $1;;
-		3)	kill_application $1;;
-		q)	exit;;
-      esac
-    done
-  else
-    echo "app $1 is not running..."
-  fi
+    if pgrep -i $1 >/dev/null	# ??? or -- if [ $(ps aux | grep -i $1 | wc -l) -gt 0 ]
+    then
+        #
+        # loop forever - break by 'exit' command or 'ctrl-c' shortcut
+        #
+        while :
+        do
+            show_application_options $1
+            read -s -n 1 ans;
+            case $ans in
+                1)  pgrep -i $1 -d " ";;
+                2)  pgrep -ail $1;;
+                x)  kill_application $1;;
+                q)  exit;;
+            esac
+        done
+    else
+        echo "app $1 is not running..."
+    fi
 fi
 
