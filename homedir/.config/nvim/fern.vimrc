@@ -2,10 +2,11 @@
 
 " Fern config
 
-let g:fern#drawer_width = 30
+let g:fern#drawer_width   = 30
 let g:fern#default_hidden = 1
-let g:fern#disable_drawer_auto_quit = 0
-let g:fern#disable_default_mappings = 1
+let g:fern#disable_default_mappings   = 1
+let g:fern#disable_drawer_auto_quit   = 1
+let g:fern#disable_viewer_hide_cursor = 1
 
 " toggle Fern
 noremap <silent> <tab> :Fern . -drawer -reveal=% -toggle -width=35<CR><C-w>=
@@ -15,7 +16,7 @@ function! FernInit() abort
         nmap <buffer> V <Plug>(fern-action-open:vsplit)
 	nmap <buffer> T <Plug>(fern-action-open:tabedit)
         nmap <buffer> r <Plug>(fern-action-reload)
-	nmap <buffer> R <Plug>(fern-action-rename)
+	nmap <buffer> m <Plug>(fern-action-rename)
 	nmap <buffer> M <Plug>(fern-action-move)
 	nmap <buffer> C <Plug>(fern-action-new-copy)
 	nmap <buffer> N <Plug>(fern-action-new-path)
