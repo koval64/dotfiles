@@ -44,12 +44,28 @@ call plug#end()
 " Get syntax files from config folder
 " set runtimepath+=~/.config/nvim/syntax
 
-" general
+" General
 colorscheme PaperColor
 set background=dark
 set number relativenumber
 set nowrap
 set clipboard=unnamed
+
+set ignorecase		" always case insensitive
+
+set autoindent		" auto-indent new lines
+set expandtab		" use spaces instead of tabs
+set shiftwidth=4	" number of auto-indent spaces
+set smartindent		" enable smart-indent
+set smarttab		" enable smart-tabs
+set softtabstop=4	" number of spaces per tab
+
+" Advanced
+
+set autochdir
+set autowriteall
+
+set backspace=indent,eol,start	" backspace behavior
 
 " Disable C-z from job-controlling neovim
 nnoremap <c-z> <nop>
