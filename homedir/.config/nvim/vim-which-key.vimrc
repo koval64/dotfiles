@@ -24,11 +24,8 @@ let g:which_key_map['f'] = {
 	\ 'p' : [':update | !python3 %'		, ':python3 %']	,
 	\ 'q' : [':quit'			, ':quit']	,
 	\ 's' : [':update'			, 'save buffer']	,
-	\ 'e' : [':Fern . -drawer -reveal=%'	, 'filemanager']	,
+	\ 'e' : [':Fern . -drawer -reveal=% -toggle -width=35'	, 'filemanager']	,
 	\ }
-
-" other version of toggling FERN
-" noremap <silent> <Leader>f :Fern . -drawer -reveal=% -toggle -width=35<CR><C-w>=
 
 " let g:which_key_map.l = {
 "       \ 'name' : '+lsp',

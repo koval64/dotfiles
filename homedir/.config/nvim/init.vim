@@ -47,6 +47,7 @@ source ~/.config/nvim/tmux-seamless-navigation.vimrc
 source ~/.config/nvim/coc-newconfig.vimrc
 source ~/.config/nvim/vimwiki.vimrc
 source ~/.config/nvim/commentary.vimrc
+source ~/.config/nvim/disable-netrw.vimrc
 source ~/.config/nvim/fern.vimrc
 source ~/.config/nvim/fzf.vimrc
 
