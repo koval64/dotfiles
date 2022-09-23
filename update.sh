@@ -28,17 +28,14 @@ config_files=(
     "workspace/suckless/simple-terminal/patches/*"
 )
 
-# first remove old backup
-#echo "Deleting old backup"
-#rm -rf homedir/
+# to remove old backup
+# > echo "Deleting old backup"
+# > rm -rf homedir/
 
-echo "Making fresh backup"
-# now copy fresh version of files
+echo "Refreshing files..."
 for name in ${config_files[*]}
 do
 	rsync -rRi $HOME/./$name homedir/
 done
-
-
 echo "Done."
 
