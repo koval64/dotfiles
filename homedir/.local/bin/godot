@@ -1,4 +1,4 @@
 #!/bin/bash
 
-apprun godot
+apprun "$0"
 

@@ -1,4 +1,4 @@
-alias wiki='vim ~/vimwiki/_Sidebar.md'
+alias wiki='vim ~/vimwiki/Home.md'
 alias v='nvim -p $(fzf -i --multi --layout=reverse --exact --preview "cat {}")'
 alias site='vim ~/workspace/github/marioc8.github.io/index.md'
 alias grep='grep -v grep | grep'

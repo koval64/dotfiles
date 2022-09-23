@@ -2,6 +2,10 @@
 " FONT TEST START
 "
 " console.log "oO08 iIlL1 g9qCGQ ~-+=>";
+" 
+" good ones:
+"
+" st -f "hack:size9.5" -e vim       " size work differently in console and in config.def.h
 
 "
 " FONT TEST END
