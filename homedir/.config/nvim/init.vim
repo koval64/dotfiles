@@ -31,6 +31,7 @@
 call plug#begin()
 
 " console.log "oO08"
+Plug 'mhinz/vim-startify'
 Plug 'liuchengxu/vim-which-key'		" Based on plugin 'hecal3/vim-leader-guide'
 Plug 'christoomey/vim-tmux-navigator'   " Seamless navigation between tmux panes and vim splits
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
