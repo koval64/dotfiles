@@ -13,14 +13,14 @@ let g:which_key_map =  {}
 
 let g:which_key_map['a'] = {
 	\ 'name' : '+admin',
-	\ 'c' : [':checkhealth'			      , 'vim-checkhealth']	,
-	\ 'd' : [':e $MYVIMRC'			      , 'edit-vimrc']		,
+	\ 'c' : [':checkhealth'			, 'vim-checkhealth']	,
+	\ 'd' : [':e $MYVIMRC'			, 'edit-vimrc']		,
 	\ 'r' : [':update | so $MYVIMRC'	, 'reload-vim-config']	,
 	\ }
 
 let g:which_key_map['f'] = {
 	\ 'name' : '+file',
-	\ 'x' : [':update | !bash %'		  , ':bash %']	,
+	\ 'x' : [':update | !bash %'		, ':bash %']	,
 	\ 'p' : [':update | !python3 %'		, ':python3 %']	,
 	\ 'q' : [':quit'			, ':quit']	,
 	\ 's' : [':update'			, 'save buffer']	,

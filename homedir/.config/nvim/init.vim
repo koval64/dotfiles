@@ -1,17 +1,9 @@
 
 " FONT TEST START
-"
 " console.log "oO08 iIlL1 g9qCGQ ~-+=>";
-" 
-" good ones:
-"
-" st -f "hack:size9.5" -e vim       " size work differently in console and in config.def.h
-
-"
 " FONT TEST END
 
-" HELP vim START
-"
+" vim HELP START
 "### VIM REMAPING
 " inoremap	-- insert mode non recursive mapping
 " 
@@ -23,14 +15,11 @@
 " 		run :vertical resize 30
 "
 "### VIM FILE MANAGERS
-"
 " netrw > Nerdtree > Fern > CoCExplorer
-"
-" HELP vim END
+" vim HELP END
 
 call plug#begin()
 
-" console.log "oO08"
 Plug 'mhinz/vim-startify'
 Plug 'liuchengxu/vim-which-key'		" Based on plugin 'hecal3/vim-leader-guide'
 Plug 'christoomey/vim-tmux-navigator'   " Seamless navigation between tmux panes and vim splits
