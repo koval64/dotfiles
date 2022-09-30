@@ -21,7 +21,7 @@
 call plug#begin()
 
 Plug 'mhinz/vim-startify'
-Plug 'liuchengxu/vim-which-key'		" Based on plugin 'hecal3/vim-leader-guide'
+Plug 'folke/which-key.nvim'             " leader key bindings
 Plug 'christoomey/vim-tmux-navigator'   " Seamless navigation between tmux panes and vim splits
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vimwiki/vimwiki'
@@ -35,10 +35,10 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim'	" for Fern icons
 
 call plug#end()
 
-" Plugins config
-source ~/.config/nvim/vim-which-key.vimrc 
+" Plugins configs
+source ~/.config/nvim/which-key.vimrc 
 source ~/.config/nvim/tmux-seamless-navigation.vimrc
-source ~/.config/nvim/coc-newconfig.vimrc
+source ~/.config/nvim/coc.vimrc
 source ~/.config/nvim/vimwiki.vimrc
 source ~/.config/nvim/commentary.vimrc
 source ~/.config/nvim/disable-netrw.vimrc

@@ -37,13 +37,13 @@ imap <c-c> <esc>
 vmap <c-c> <esc>
 omap <c-c> <esc>
 
-" Type a replacement term and press . to repeat the replacement again. Useful
+" Type a replacement term and press "." to repeat the replacement again. Useful
 " for replacing a few instances of the term (comparable to multiple cursors).
 nnoremap <silent> s* :let @/='\<'.expand('<cword>').'\>'<CR>cgn
 xnoremap <silent> s* "sy:let @/=@s<CR>cgn
 
 " Prevent x and the delete key from overriding what's in the clipboard
-" (suppose) cons : disallaw you to swap two a json caracters
+" (suppose) cons : disallow you to swap two a json characters
 noremap x "_x
 noremap X "_x
 noremap <Del> "_x

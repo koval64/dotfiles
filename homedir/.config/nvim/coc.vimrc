@@ -1,4 +1,8 @@
 
+"
+" set (g:coc_node_path) variable to specify which (node) executable to start
+" coc.nvim service from
+"
 
 
 " Enter key autocomplete
