@@ -50,7 +50,7 @@ show_application_options()
 {
         echo -en "${GREEN}"
         echo    ": $1 :   1) pids         2) pids with name"
-        echo -n ": $1 :   x) soft kill    k) hard kill            q) quit"
+        echo -n ": $1 :   s) soft kill    h) hard kill            q) quit"
         echo -e "${ENDCOLOR}"
 }
 
@@ -72,8 +72,8 @@ else
             case $ans in
                 1)  pgrep -i $1 -d " ";;
                 2)  pgrep -ail $1;;
-                x)  soft_kill_application $1;;
-                k)  hard_kill_application $1;;
+                s)  soft_kill_application $1;;
+                h)  hard_kill_application $1;;
                 q)  exit;;
             esac
         done

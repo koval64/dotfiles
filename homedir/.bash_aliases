@@ -47,3 +47,21 @@ function v() {
     fi
 }
 
+function d1() {
+    tmux new
+    tmux neww
+    tmux splitw -v
+    tmux select-pane -U
+    tmux splitw -h
+    tmux select-pane -L
+
+    #
+    # if you outside tmux session try this:
+
+    # tmux new-session -s "mySession_01" -d
+    # tmux split-window -v
+    # tmux select-pane -U
+    # tmux split-window -h
+    # tmux -2 attach-session -d
+}
+
