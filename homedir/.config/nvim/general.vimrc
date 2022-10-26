@@ -24,7 +24,7 @@ set softtabstop=4	" number of spaces per tab
 " Advanced
 
 set autochdir
-set autowriteall
+" set autowriteall
 
 set backspace=indent,eol,start	" backspace behavior
 

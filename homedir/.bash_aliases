@@ -42,18 +42,26 @@ function v() {
     if [ $# -ne 1 ]; then
         nvim -p *
     else
-        DIR=$(pwd)
-        cd $1 && nvim -p * && cd $DIR
+        FORLDER=$(pwd)
+        cd $1 && nvim -p * && cd $FORLDER
     fi
 }
 
 function d1() {
-    tmux new
-    tmux neww
-    tmux splitw -v
-    tmux select-pane -U
-    tmux splitw -h
-    tmux select-pane -L
+    FOLDER=$(find . -type d | fzf --layout=reverse)
+    if [ $? -eq 0 ]; then
+        cd "$FOLDER"
+        # tmux new
+        # tmux neww
+        tmux splitw -v
+        tmux select-pane -U
+        tmux splitw -h
+        tmux select-pane -L
+        # if bash prompt is too long there is a bug with tmux -
+        # - when resizing window new prompts appear
+        # below does not fix this
+        # tmux send ls ENTER
+    fi
 
     #
     # if you outside tmux session try this:
