@@ -16,7 +16,7 @@ show_notification()
 	fi
 }
 
-kill_application()
+soft_kill_application()
 {
 	show_notification "killing $1..."
 	pkill -i $1
@@ -31,10 +31,26 @@ kill_application()
 	ps aux | grep -i $1 | grep -v grep
 }
 
+hard_kill_application()
+{
+	show_notification "killing $1..."
+	pkill -9 -i $1
+	sleep 1
+	pkill -9 -i $1
+	if pgrep -i discord >/dev/null
+	then
+		show_notification "failed killing $1..."
+	else
+		show_notification "$1 killed..."
+	fi
+	ps aux | grep -i $1 | grep -v grep
+}
+
 show_application_options()
 {
         echo -en "${GREEN}"
-        echo -n "> $1 > 1)pids 2)pids with name x)kill q)quit"
+        echo    ": $1 :   1) pids         2) pids with name"
+        echo -n ": $1 :   x) soft kill    k) hard kill            q) quit"
         echo -e "${ENDCOLOR}"
 }
 
@@ -56,7 +72,8 @@ else
             case $ans in
                 1)  pgrep -i $1 -d " ";;
                 2)  pgrep -ail $1;;
-                x)  kill_application $1;;
+                x)  soft_kill_application $1;;
+                k)  hard_kill_application $1;;
                 q)  exit;;
             esac
         done

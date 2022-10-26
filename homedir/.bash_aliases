@@ -1,5 +1,6 @@
 alias wiki='vim ~/vimwiki/Home.md'
-alias v='nvim -p $(fzf -i --multi --layout=reverse --exact --preview "cat {}")'
+alias vim='nvim -p'
+alias f='nvim -p $(fzf -i --multi --layout=reverse --exact --preview "cat {}")'
 alias site='vim ~/workspace/github/marioc8.github.io/index.md'
 alias grep='grep -v grep | grep'
 alias mtr='mtr -t'
@@ -16,6 +17,7 @@ alias rd='cd "`xclip -o`"'    # restore current working directory
 alias clipdel='clipdel -d .*'
 alias summary='bash ~/.scripts/summary.sh'
 alias disks="lsblk | awk '\$6!=\"loop\"'"
+alias x='setxkbmap -option caps:ctrl_modifier'
 
 # backup ?
 function archive(){
@@ -34,5 +36,14 @@ function searchd() {         # search for file in current directory
 
 function images() {
   searchf "*$1*" | grep -v ".cache/" | sxiv -i
+}
+
+function v() {
+    if [ $# -ne 1 ]; then
+        nvim -p *
+    else
+        DIR=$(pwd)
+        cd $1 && nvim -p * && cd $DIR
+    fi
 }
 

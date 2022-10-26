@@ -1,4 +1,6 @@
 
+xset dpms 0 0 0
+xset s 0
 # setxkbmap -option	# clear all layouts
 # setxkbmap -option caps:swapescape
 # setxkbmap -option caps:escape

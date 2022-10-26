@@ -2,7 +2,7 @@
 Name=Simple Terminal
 GenericName=Terminal
 Comment=Suckless terminal emulator for X
-Exec=st -t "Simple Terminal" -f "Source Code Pro:style=Semibold:size=12"
+Exec=st -t "Simple Terminal" -f "Hack:style=Semibold:size=12"
 Terminal=false
 Type=Application
 Icon=utilities-terminal

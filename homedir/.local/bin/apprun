@@ -21,7 +21,7 @@
 #
 #    Change rights, and it's ready to run.
 #
-# 3. To run app type "application_name" org "apprun application_name"
+# 3. To run app type "application_name" or "apprun application_name"
 #    You don't have to worry about version naming anymore.
 #    Usefull for scripts. So :
 #
