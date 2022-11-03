@@ -9,7 +9,7 @@ let g:fern#disable_drawer_auto_quit   = 1
 let g:fern#disable_viewer_hide_cursor = 1
 
 " toggle Fern
-noremap <silent> <tab> :Fern . -drawer -reveal=% -toggle -width=35<CR><C-w>=
+noremap <silent> <F4> :Fern . -drawer -reveal=% -toggle -width=35<CR><C-w>=
 
 function! FernInit() abort
         nmap <buffer> H <Plug>(fern-action-open:split)

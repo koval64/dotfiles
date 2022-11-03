@@ -48,5 +48,6 @@ source ~/.config/nvim/fzf.vimrc
 " Vim settings
 source ~/.config/nvim/general.vimrc
 
+let b:coc_diagnostic_disable=1
 
 

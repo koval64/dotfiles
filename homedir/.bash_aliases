@@ -42,8 +42,8 @@ function v() {
     if [ $# -ne 1 ]; then
         nvim -p *
     else
-        FORLDER=$(pwd)
-        cd $1 && nvim -p * && cd $FORLDER
+        FOLDER=$(pwd)
+        cd $1 && nvim -p * && cd $FOLDER
     fi
 }
 
@@ -56,10 +56,12 @@ function d1() {
         tmux splitw -v
         tmux select-pane -U
         tmux splitw -h
+        tmux resize-pane -L 2
         tmux select-pane -L
+        tmux resize-pane -y 50
         # if bash prompt is too long there is a bug with tmux -
-        # - when resizing window new prompts appear
-        # below does not fix this
+        # - when resizing window new prompts appear.
+        # Below does not fix this:
         # tmux send ls ENTER
     fi
 

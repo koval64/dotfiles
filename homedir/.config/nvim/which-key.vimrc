@@ -81,6 +81,17 @@ wk.register({
     [" fp"] = { ":update | !python3 %<cr>",                         ":python3 %" },
     [" fe"] = { ":Fern . -drawer -reveal=% -toggle -width=35<cr>",  "filemanager" },
 
+    -- Coc
+    [" c" ] = { name = "+Coc Diagnostics" },
+    [" ca"] = { ":<C-u>CocList diagnostics<cr>",        "Diagnostics" },
+    [" ce"] = { ":<C-u>CocList extensions<cr>",         "Extensions" },
+    [" cc"] = { ":<C-u>CocList commands<cr>",           "Commands" },
+    [" co"] = { ":<C-u>CocList outline<cr>",            "Outline" },
+    [" cs"] = { ":<C-u>CocList -I symbols<cr>",         "Symbols" },
+    [" cj"] = { ":<C-u>CocNext<CR>",                    "CocNext" },
+    [" ck"] = { ":<C-u>CocPrev<CR>",                    "CocPrev" },
+    [" cp"] = { ":<C-u>CocListResume<CR>i",             "CocListResume" },
+
     -- TODO vim wiki
     [" n" ] = { name = "+notes" },
     [" nf"] = { "<cmd>Telescope find_files<cr>",    "tu bedzie vimwiki" },

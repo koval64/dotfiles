@@ -60,25 +60,30 @@ FILENAME=$(find . -type f -iname "$APPNAME*" | cut -c 3- | grep -v ^"$APPNAME"$)
 FILEPATH="$DIR$FILENAME"
 
 # DEBUG START
-# echo $APPNAME
-# echo $DIR
-# echo $FILENAME
-# echo $FILEPATH
+# echo " APPNAME :  $APPNAME"
+# echo "     DIR :  $DIR"
+# echo "FILENAME :  $FILENAME"
+# echo "FILEPATH :  $FILEPATH"
+# echo "      \$1 :  $1"
+# echo "all args : $@"
 # exit 0
 # DEBUG END
 
 if [ ! -f $FILEPATH ]; then
 
-    echo "File not found! :  $FILEPATH"
+    echo "File not found! :  $FILEPATH $APPNAME"
     # notify-send "File not found!" "$FILEPATH" -t 2500
 
 else
 
-    pushd $DIR
-    # notify-send "Running" "$FILEPATH" -t 2500
-    ./"$FILENAME" "$@"
-    popd
+    # pushd $DIR
+    # ./"$FILENAME" "$@"
+    # popd
 
+    FOLDER=$(pwd)
+    # notify-send "Running" "$FILEPATH" -t 2500
+    # cd $DIR && ./"$FILENAME" "$@" && cd $FOLDER
+    cd $DIR && ./"$FILENAME" && cd $FOLDER
 fi
 
 

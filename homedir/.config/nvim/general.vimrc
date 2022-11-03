@@ -49,7 +49,7 @@ noremap X "_x
 noremap <Del> "_x
 
 " Keep cursor at the bottom of the visual selection after you yank it.
-vmap y ygv<Esc>
+" vmap y ygv<Esc>
 
 " Toggle spell check.
 map <F5> :setlocal spell!<CR>
@@ -59,6 +59,15 @@ syntax on
 
 " default file encoding
 set encoding=utf-8
+
+" tab navigation
+" open new tab
+nnoremap <C-t>  :tabnew<CR>
+inoremap <C-t>  <Esc>:tabnew<CR>
+" move to previous/next tab
+nnoremap <C-n> :tabprevious<CR>
+nnoremap <C-p> :tabnext<CR>
+
 
 
 
