@@ -52,7 +52,7 @@ noremap <Del> "_x
 " vmap y ygv<Esc>
 
 " Toggle spell check.
-map <F5> :setlocal spell!<CR>
+map <F8> :setlocal spell!<CR>
 
 " Syntax highlighting
 syntax on

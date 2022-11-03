@@ -52,10 +52,12 @@ endfunction
 " COC SNIPPETS END
 "
 
-
 " coc-python
 set statusline^=%{coc#status()}
 
+let b:coc_diagnostic_disable=1
+
+noremap <silent> <F5> :CocCommand document.toggleInlayHint<CR>
 
 
 

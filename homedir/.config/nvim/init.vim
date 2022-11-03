@@ -1,4 +1,14 @@
 
+
+
+
+" F4    -- toggle Fern
+" F5    -- toggle inlay hint ( Coc plugin )
+" F8    -- toggle word spellcheck
+
+
+
+
 " FONT TEST START
 " console.log "oO08 iIlL1 g9qCGQ ~-+=>";
 " FONT TEST END
@@ -47,7 +57,4 @@ source ~/.config/nvim/fzf.vimrc
 
 " Vim settings
 source ~/.config/nvim/general.vimrc
-
-let b:coc_diagnostic_disable=1
-
 
