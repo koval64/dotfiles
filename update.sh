@@ -24,7 +24,7 @@ config_files=(
     ".scripts/examples/*"
     "workspace/suckless/dwm/dwm-6.3/config.def.h"
     "workspace/suckless/dwm/patches/*"
-    "workspace/suckless/simple-terminal/st-0.8.5/config.def.h"
+    "workspace/suckless/simple-terminal/st-0.9/config.def.h"
     "workspace/suckless/simple-terminal/patches/*"
 )
 
