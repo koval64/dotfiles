@@ -17,6 +17,7 @@ OPTIONS+=("duplicate second screen")
 OPTIONS+=("toggle audio sinks")
 OPTIONS+=("restart pipewire")
 OPTIONS+=("clipdel")
+OPTIONS+=("dev env sfx_tool")
 # OPTIONS+=("lutris")
 # OPTIONS+=("steam")
 # OPTIONS+=("godot")
@@ -39,5 +40,6 @@ case "${SELECTION}" in
 	"lutris")			lutris	;;
 	"steam")			steam	;;
 	"godot")			godot	;;
+        "dev env sfx_tool")             st d1   ;;
 esac
 

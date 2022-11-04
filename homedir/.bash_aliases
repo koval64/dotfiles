@@ -47,31 +47,3 @@ function v() {
     fi
 }
 
-function d1() {
-    FOLDER=$(find . -type d | fzf --layout=reverse)
-    if [ $? -eq 0 ]; then
-        cd "$FOLDER"
-        # tmux new
-        # tmux neww
-        tmux splitw -v
-        tmux select-pane -U
-        tmux splitw -h
-        tmux resize-pane -L 2
-        tmux select-pane -L
-        tmux resize-pane -y 50
-        # if bash prompt is too long there is a bug with tmux -
-        # - when resizing window new prompts appear.
-        # Below does not fix this:
-        # tmux send ls ENTER
-    fi
-
-    #
-    # if you outside tmux session try this:
-
-    # tmux new-session -s "mySession_01" -d
-    # tmux split-window -v
-    # tmux select-pane -U
-    # tmux split-window -h
-    # tmux -2 attach-session -d
-}
-

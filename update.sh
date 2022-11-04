@@ -11,6 +11,7 @@ config_files=(
     ".local/bin/layoutmenu.sh"
     ".local/bin/mounting.sh"
     ".local/bin/poweroff.sh"
+    ".local/bin/d1"
     ".local/share/csr/*"
     ".local/share/applications/st.desktop"
     ".local/share/fzf/*"
