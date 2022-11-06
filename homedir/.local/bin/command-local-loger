@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# get self name
+APPNAME=$(echo $0 | awk -F'/' '{ print $NF }')
+
+# log all command to file
+echo "$0 $@" >> "$HOME"/.local/log/"$APPNAME".log
+

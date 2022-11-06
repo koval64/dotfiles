@@ -12,6 +12,7 @@ config_files=(
     ".local/bin/mounting.sh"
     ".local/bin/poweroff.sh"
     ".local/bin/d1"
+    ".local/bin/command-local-loger"
     ".local/share/csr/*"
     ".local/share/applications/st.desktop"
     ".local/share/fzf/*"

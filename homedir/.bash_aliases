@@ -22,7 +22,7 @@ alias x='setxkbmap -option caps:ctrl_modifier'
 # backup ?
 function archive(){
   path=`echo $1 | tr -d "/"`
-  tar -cf "$(date -u +"%Y%m%d_%s")_$path.tar" $path
+  tar -czf "$(date -u +"%Y%m%d_%s")_$path.tar.gz" $path
 }
 
 function searchf() {         # search for file in current directory
