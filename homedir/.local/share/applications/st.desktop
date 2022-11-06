@@ -9,3 +9,4 @@ Icon=utilities-terminal
 Categories=System;TerminalEmulator;
 Keywords=shell;prompt;command;commandline;cmd;
 
+MimeType=x-scheme-handler/unknown;x-scheme-handler/about;x-scheme-handler/https;x-scheme-handler/http;text/html;

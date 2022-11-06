@@ -26,16 +26,18 @@ function archive(){
 }
 
 function searchf() {         # search for file in current directory
-  find . -type f -iname $1 2>&1 | grep -v "Permission denied"
+  find . -type f -iname "$1" 2>&1 | grep -v "Permission denied"
 }
 
 function searchd() {         # search for file in current directory
-  find . -type d -iname $1 2>&1 | grep -v "Permission denied"
+  find . -type d -iname "$1" 2>&1 | grep -v "Permission denied"
 }
 
 
 function images() {
-  searchf "*$1*" | grep -v ".cache/" | sxiv -i
+  # find . -type f iname "*$1*" | grep -v .cache/" | mpv -fs --playlist=-
+  # searchf "*$1*" | grep -v ".cache/" | sxiv -i -S 5 -f -sf
+  searchf "*$1*" | mpv -fs --image-display-duration=5 --playlist=-
 }
 
 function v() {
@@ -43,7 +45,7 @@ function v() {
         nvim -p *
     else
         FOLDER=$(pwd)
-        cd $1 && nvim -p * && cd $FOLDER
+        cd "$1" && nvim -p * && cd $FOLDER
     fi
 }
 
