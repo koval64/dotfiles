@@ -55,6 +55,7 @@ show_application_options()
 }
 
 if [ $# -ne 1 ]; then
+    echo "> kill application"
     echo "application name please..."
 else
     #

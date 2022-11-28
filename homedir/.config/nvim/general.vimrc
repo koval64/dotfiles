@@ -65,8 +65,8 @@ set encoding=utf-8
 nnoremap <C-t>  :tabnew<CR>
 inoremap <C-t>  <Esc>:tabnew<CR>
 " move to previous/next tab
-nnoremap <C-n> :tabprevious<CR>
-nnoremap <C-p> :tabnext<CR>
+nnoremap <C-p> :tabprevious<CR>
+nnoremap <C-n> :tabnext<CR>
 
 
 

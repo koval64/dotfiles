@@ -1,0 +1,33 @@
+#!/bin/sh
+# Send PUSH notifications via xdroid API
+# https://play.google.com/store/apps/details?id=net.xdroid.pn
+
+usage() {
+	echo "Usage: $0 [-h] -k <key> -t <title> -c <conten> [-u <uri>]"
+	exit 1
+}
+
+main() {
+        while getopts "k:t:c:u:h" o; do
+                case $o in
+		k) apikey="$OPTARG";;
+		t) title="$OPTARG";;
+		c) content="$OPTARG";;
+		u) uri="$OPTARG";;
+		h) usage;;
+                esac
+        done
+	shift "$(echo "$OPTIND - 1"|bc)"
+
+	[ -z "$apikey" -o -z "$content" ] && usage
+
+	curl -s --get \
+	--data-urlencode "k=$apikey" \
+	--data-urlencode "t=$title" \
+	--data-urlencode "c=$content" \
+	--data-urlencode "u=$uri" \
+	"https://xdroid.net/api/message"
+}
+
+main "$@"
+

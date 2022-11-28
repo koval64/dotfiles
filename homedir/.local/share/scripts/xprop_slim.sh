@@ -1,5 +1,9 @@
 #!/usr/bin/bash
 
+#
+# Print runnin xfree86/xwindows applications
+#
+
 list_xapps()
 {
   xapps_list=$(xprop -root -notype _NET_CLIENT_LIST | awk -F "# " '{print $2}' | sed "s/, / /g")
