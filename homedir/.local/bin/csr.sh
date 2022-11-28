@@ -5,7 +5,7 @@
 UDIR="$HOME/.local/share/csr"
 THEME=${1:-$HOME/.config/rofi/solarized-black}
 
-# Used defined options menu
+# User defined options menu
 OPTIONS=()
 OPTIONS+=("discord")
 OPTIONS+=("telegram")
