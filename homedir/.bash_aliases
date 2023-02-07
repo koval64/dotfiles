@@ -41,11 +41,18 @@ function images() {
 }
 
 function v() {
-    if [ $# -ne 1 ]; then
-        nvim -p *
+    if [ $# -eq 0 ]; then
+        nvim -p $(ls -p | grep -v '/$' | fzf -i --multi --layout=reverse --exact --preview "cat {}")
     else
         FOLDER=$(pwd)
-        cd "$1" && nvim -p * && cd $FOLDER
+        echo $@
+        if [ -d "$FOLDER" ];
+        then
+            echo "$FOLDER directory exists."
+            cd "$1" && nvim -p * && cd $FOLDER
+        else
+            echo "$FOLDER directory does not exist."
+        fi
     fi
 }
 

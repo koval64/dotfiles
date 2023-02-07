@@ -1,72 +1,92 @@
 #!/usr/bin/python3
 
+from random import randint
+
+norm = '\033[0m'
+
+# format help string:
+# - light up first char in space separated string
+# - separate by 3 spaces
+def format_help(text):
+
+    # randomize first character background color
+    backlight_color = str( randint(0,7) )
+
+    if backlight_color == '0':
+        back = ''
+    else:
+        back = '\033[30;4' + backlight_color + 'm'
+
+    return '   '.join( [ back + c[0] + norm + c[1:] for c in text.split() ] )
+
 class HappyNumber:
 
-    def __init__(s):
-        s.used_numbers = []
+    def __init__(self):
+        self.used_numbers = []
 
-    def add(s, number):
-        if number in s.used_numbers:
+    def add(self, number):
+        if number in self.used_numbers:
             print( f'{number}  already used' )
         else:
             if number in range(1,101):
-                s.used_numbers.append(number)
+                self.used_numbers.append(number)
                 print( f'{number}   added' )
             else:
                 print("only numbers in range(1, 100)")
 
-    def clear(s):
-        s.used_numbers.clear()
+    def clear(self):
+        self.used_numbers.clear()
         print( 'notes empty' )
 
-    def remove(s, number):
-        if number in s.used_numbers:
-            s.used_numbers.remove(number)
+    def remove(self, number):
+        if number in self.used_numbers:
+            self.used_numbers.remove(number)
             print( f'{number}   removed' )
 
-    def exclude(s, numbers_list):
+    def exclude(self, numbers_list):
         if len( numbers_list ) > 0:
             for number in numbers_list:
-                s.remove( int( number ) )
+                self.remove( int( number ) )
 
-    def extend(s, numbers_list):
+    def extend(self, numbers_list):
         if len( numbers_list ) > 0:
             for number in numbers_list:
-                s.add( int( number ) )
+                self.add( int( number ) )
 
     # 1 - 100
-    def show(s):
+    def show(self):
         print()
         for y in range(0,10):
             line = []
             for x in range(1,11):
                 num = y * 10 + x
-                if num in s.used_numbers:
+                if num in self.used_numbers:
                     line.append( "%02s" % num )
                 else:
                     line.append("  ")
             print( " ".join(line) )
         print()
 
-    def load(s):
+    def load(self):
         try:
             with open( 'happy number backup.txt' ) as f:
-                s.used_numbers = list( map( int, f.read().split() ) )
+                self.used_numbers = list( map( int, f.read().split() ) )
             print( 'loading...' )
         except IOError: 
             print( "Error: File not found." )
 
-    def save(s):
-        s.used_numbers.sort()
+    def save(self):
+        self.used_numbers.sort()
         fh = open( 'happy number backup.txt', 'w' )
-        for number in s.used_numbers:
+        for number in self.used_numbers:
             fh.write( '%s ' % number )
         fh.close()
         print( 'saving...' )
 
-    def help(s):
-
-        print("add   remove   load   save   print   clear   help   quit")
+    def help(self):
+        # print("add   remove   load   save   print   clear   help   quit")
+        commands = "add remove load save print clear help quit"
+        print(format_help(commands))
         print()
 
 def main():

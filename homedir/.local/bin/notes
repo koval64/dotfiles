@@ -12,8 +12,8 @@ SELECTION=$(printf "%s\n" "${OPTIONS[@]}" | fzf)
 # SELECTION=$(echo -e "${OPTIONS}" | rofi -sep "|" -dmenu -theme $THEME -p "my scripts")
 
 case "${SELECTION}" in
-	"notes")	    python3 .local/share/scripts/notes_tui.py;;
-	"happy number")	    python3 .local/share/scripts/notes2.py;;
+	"notes")	    python3 ~/.local/share/scripts/notes_tui.py;;
+	"happy number")	    python3 ~/.local/share/scripts/notes2.py;;
 esac
 
 

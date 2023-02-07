@@ -1,11 +1,18 @@
 #!/usr/bin/python3
 
-notes = []
-
 # p - print
 # a - add
 # r - remove
 # d - remove
+
+back = '\033[30;43m'
+norm = '\033[0m'
+
+# format help string:
+# - light up first char in space separated string
+# - separate by 3 spaces
+def format_help(text):
+    return '   '.join( [ back + c[0] + norm + c[1:] for c in text.split() ] )
 
 class Notes:
 
@@ -36,7 +43,8 @@ class Notes:
     #     self.notes.pop( index )
 
     def help(self):
-        print("add   remove   load   save   print   clear   help   quit")
+        commands = 'add remove load save print clear help quit'
+        print(format_help(commands))
         print()
 
 def main():

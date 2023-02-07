@@ -6,6 +6,7 @@ config_files=(
     ".config/rofi/"
     ".local/bin/app"
     ".local/bin/apprun"
+    ".local/bin/clipmenu"
     ".local/bin/csr.sh"
     ".local/bin/godot"
     ".local/bin/layoutmenu.sh"
