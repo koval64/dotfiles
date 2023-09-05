@@ -37,7 +37,8 @@ function searchd() {         # search for file in current directory
 function images() {
   # find . -type f iname "*$1*" | grep -v .cache/" | mpv -fs --playlist=-
   # searchf "*$1*" | grep -v ".cache/" | sxiv -i -S 5 -f -sf
-  searchf "*$1*" | mpv -fs --image-display-duration=6 --playlist=-
+  # searchf "*$1*" | mpv -fs --image-display-duration=6 --playlist=-
+  searchf "*$1*" | mpv -fs --image-display-duration=3 --playlist=-
 }
 
 function v() {

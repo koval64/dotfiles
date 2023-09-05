@@ -22,7 +22,7 @@ soft_kill_application()
 	pkill -i $1
 	sleep 1
 	pkill -i $1
-	if pgrep -i discord >/dev/null
+	if pgrep -i $1 >/dev/null
 	then
 		show_notification "failed killing $1..."
 	else
@@ -37,7 +37,7 @@ hard_kill_application()
 	pkill -9 -i $1
 	sleep 1
 	pkill -9 -i $1
-	if pgrep -i discord >/dev/null
+	if pgrep -i $1 >/dev/null
 	then
 		show_notification "failed killing $1..."
 	else

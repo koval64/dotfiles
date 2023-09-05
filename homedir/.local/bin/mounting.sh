@@ -4,7 +4,10 @@ IFS=$'\n'
 DEVICES=()
 
 # add unmounted devices to devices list
-for item in `lsblk -nr -o NAME,SIZE,FSTYPE,MOUNTPOINT | awk '$3!="" && $4==""'`
+#
+# $1 !~ "loop"    - partial match, if first argument don't have "loop" string inside
+#
+for item in `lsblk -nr -o NAME,SIZE,FSTYPE,MOUNTPOINT | awk '$1!~"loop" && $3!="" && $4==""'`
 do
 	DEVICES+=("$item")
 done
