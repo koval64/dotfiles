@@ -1,56 +1,46 @@
 #!/usr/bin/env bash
 
-DEV_FOLDER=""
-
 # development enviroments - terminal - 3 window splitted inside tmux
 # one window with parent directory
 function dev_outside_tmux_config_01() {
-    cd "$DEV_FOLDER"
+    cd "$1"
     tmux new \; new-session \; splitw -v \; send-keys 'cd .. && ls' Enter \; select-pane -U \; splitw -h \; resize-pane -L 2 \; select-pane -L \; resize-pane -y 50 \;
 }
 
 function dev_inside_tmux_config_01() {
-    cd "$DEV_FOLDER"
+    cd "$1"
     tmux splitw -v \; send-keys 'cd .. && ls' Enter \; select-pane -U \; splitw -h \; resize-pane -L 2 \; select-pane -L \; resize-pane -y 50 \;
 }
 
 # development enviroments - terminal - 3 window splitted inside tmux
 # all windows the same directory
 function dev_outside_tmux_config_02() {
-    cd "$DEV_FOLDER"
+    cd "$1"
     tmux new \; new-session \; splitw -v \; select-pane -U \; splitw -h \; resize-pane -L 2 \; select-pane -L \; resize-pane -y 50 \;
 }
 
 function dev_inside_tmux_config_02() {
-    cd "$DEV_FOLDER"
+    cd "$1"
     tmux splitw -v \; select-pane -U \; splitw -h \; resize-pane -L 2 \; select-pane -L \; resize-pane -y 50 \;
 }
 
 function run_one_parent_dir() {
     if [ "$TERM" == "tmux-256color" ]; then
-        # echo "TMUX"
-        # echo $TERM
-        dev_inside_tmux_config_01
-        cd "$DEV_FOLDER"
+        dev_inside_tmux_config_01 "$1"
+        cd "$1"
         exec bash
     else
-        # echo "pure terminal"
-        # echo $TERM
-        dev_outside_tmux_config_01
+        dev_outside_tmux_config_01 "$1"
     fi
 }
 
 function run_all_dirs_identical() {
     if [ "$TERM" == "tmux-256color" ]; then
-        # echo "TMUX"
-        # echo $TERM
-        dev_inside_tmux_config_02
-        cd "$DEV_FOLDER"
+        dev_inside_tmux_config_02 "$1"
+        cd "$1"
         exec bash
     else
-        # echo "pure terminal"
-        # echo $TERM
-        dev_outside_tmux_config_02
+        dev_outside_tmux_config_02 "$1"
     fi
 }
 
@@ -76,16 +66,13 @@ case "$1" in
         st devops.sh "$2"
         ;;
     "kielbasa")
-        DEV_FOLDER="$HOME/apps/c64 kielbasa/kielbasa"
-        run_all_dirs_identical
+        run_all_dirs_identical  "$HOME/apps/c64 kielbasa/kielbasa"
         ;;
     "kielbasa translation")
-        DEV_FOLDER="$HOME/apps/c64 kielbasa/kielbasa/scripts/"
-        run_all_dirs_identical
+        run_all_dirs_identical  "$HOME/apps/c64 kielbasa/kielbasa/scripts/"
         ;;
     "sfx_tool")
-        DEV_FOLDER="$HOME/apps/c64/ansic-oscar/sfxeditor/sfx_tool"
-        run_one_parent_dir
+        run_one_parent_dir      "$HOME/apps/c64/ansic-oscar/sfxeditor/sfx_tool"
         ;;
     "menu")
         run_rofi_menu
